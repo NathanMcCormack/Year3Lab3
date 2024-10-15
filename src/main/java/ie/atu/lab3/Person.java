@@ -23,7 +23,7 @@ public class Person {
     @Size(max = 10, message = "Employee ID cannot be greater than 10 characters")
     private String employeeId;
 
-    @Min(value = 0, message = "Age must be greater than or equal to 0")
+    @Min(value = 0, message = "Value must be greater than or equal to 0")
     private int age;
 
     @Email(message = "Email cannot be blank")
