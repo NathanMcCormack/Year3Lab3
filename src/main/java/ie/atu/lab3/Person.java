@@ -1,7 +1,9 @@
 package ie.atu.lab3;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,12 +18,13 @@ public class Person {
     private String title;
 
     @NotBlank(message = "Employee ID cannot be blank")
+    @Size(max = 10, message = "Employee ID cannot be greater than 10 characters")
     private String employeeId;
 
     @Min(value = 0, message = "Age must be greater than or equal to 0")
     private int age;
 
-    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email cannot be blank")
     private String email;
 
     @NotBlank(message = "Position cannot be blank")
